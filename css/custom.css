@@ -1,10 +1,29 @@
-/* 现代毛玻璃 */
+/* ==================== 全站蓝色毛玻璃 ==================== */
+
+/* 1. 首页文章卡片 & 侧边栏卡片 */
 #recent-posts>.recent-post-item, 
 .card-widget { 
-    background: rgba(255, 255, 255, 0.65) !important; 
-    backdrop-filter: blur(12px); 
-    -webkit-backdrop-filter: blur(12px); 
+    background: rgba(225, 240, 255, 0.7) !important; /* 浅蓝色半透明 */
+    backdrop-filter: blur(15px); 
+    -webkit-backdrop-filter: blur(15px); 
     border-radius: 15px !important; 
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1) !important; 
-    border: 1px solid rgba(255,255,255,0.3) !important; 
+    box-shadow: 0 4px 15px rgba(0, 100, 255, 0.1) !important; /* 淡蓝色阴影 */
+    border: 1px solid rgba(255,255,255,0.5) !important; 
+}
+
+/* 2. 文章详情页主容器 */
+#body-wrap .layout > div:first-child:not(.recent-posts), 
+#body-wrap #post {
+    background: rgba(225, 240, 255, 0.7) !important; /* 与上方颜色一致 */
+    backdrop-filter: blur(15px); 
+    -webkit-backdrop-filter: blur(15px); 
+    border-radius: 15px !important; 
+    box-shadow: 0 8px 32px rgba(0, 100, 255, 0.15) !important; 
+    border: 1px solid rgba(255, 255, 255, 0.6) !important;
+}
+
+/* 3. 顺手把代码块也保护一下，防止在蓝色背景下太刺眼 */
+#article-container figure.highlight {
+    background-color: #1e293b !important; 
+    border-radius: 8px !important;
 }
