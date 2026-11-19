@@ -1,29 +1,82 @@
-/* ==================== 全站蓝色毛玻璃 ==================== */
-
-/* 1. 首页文章卡片 & 侧边栏卡片 */
-#recent-posts>.recent-post-item, 
-.card-widget { 
-    background: rgba(225, 240, 255, 0.7) !important; /* 浅蓝色半透明 */
+/* ==================== 1. 全站蓝色毛玻璃（卡片 & 侧边栏） ==================== */
+#recent-posts > .recent-post-item, 
+.card-widget,
+#body-wrap .layout > div:first-child:not(.recent-posts), 
+#body-wrap #post {
+    background: rgba(225, 240, 255, 0.8) !important; 
     backdrop-filter: blur(15px); 
     -webkit-backdrop-filter: blur(15px); 
     border-radius: 15px !important; 
-    box-shadow: 0 4px 15px rgba(0, 100, 255, 0.1) !important; /* 淡蓝色阴影 */
+    box-shadow: 0 4px 15px rgba(0, 100, 255, 0.1) !important; 
     border: 1px solid rgba(255,255,255,0.5) !important; 
 }
 
-/* 2. 文章详情页主容器 */
-#body-wrap .layout > div:first-child:not(.recent-posts), 
-#body-wrap #post {
-    background: rgba(225, 240, 255, 0.7) !important; /* 与上方颜色一致 */
-    backdrop-filter: blur(15px); 
-    -webkit-backdrop-filter: blur(15px); 
-    border-radius: 15px !important; 
-    box-shadow: 0 8px 32px rgba(0, 100, 255, 0.15) !important; 
-    border: 1px solid rgba(255, 255, 255, 0.6) !important;
+/* ==================== 2. 文章底部的标签、分享与版权框透明化 ==================== */
+/* 标签栏和分享栏 */
+#tag_share .post-tags a, 
+#tag_share .post-share .social-share, 
+#tag_share .post-share .social-share .social-share-icon {
+    background: rgba(225, 240, 255, 0.6) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border-radius: 8px !important;
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
+    color: #333 !important;
 }
 
-/* 3. 顺手把代码块也保护一下，防止在蓝色背景下太刺眼 */
+/* 版权信息框 */
+#article-container .post-copyright {
+    background: rgba(225, 240, 255, 0.6) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border-radius: 10px !important;
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
+}
+
+/* ==================== 3. 代码块完美修复（不误伤其他元素） ==================== */
+/* 仅针对代码块外壳 */
 #article-container figure.highlight {
-    background-color: #1e293b !important; 
+    background-color: #0f2027 !important; 
     border-radius: 8px !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2) !important; 
+    overflow: hidden !important; 
+    border: 1px solid rgba(255,255,255,0.05) !important;
+}
+
+/* 顶部工具栏（Mac 三个小圆点和复制按钮那一条） */
+#article-container figure.highlight .highlight-tools {
+    background-color: #0a151a !important;
+}
+
+/* 仅针对代码块内部的表格强制铺满，绝不误伤外部卡片 */
+#article-container figure.highlight table {
+    width: 100% !important;
+    display: table !important;
+    table-layout: fixed !important; 
+    margin: 0 !important;
+    border-collapse: collapse !important;
+}
+
+/* 代码块内部左侧行号区 */
+#article-container figure.highlight .gutter {
+    width: 40px !important; 
+    background-color: #0a151a !important; 
+    border-right: 1px solid rgba(255,255,255,0.05) !important;
+}
+
+/* 代码块内部右侧代码区 */
+#article-container figure.highlight .code {
+    width: calc(100% - 40px) !important;
+    background-color: #0f2027 !important;
+}
+
+/* 清除代码块 pre 和 td 的干扰 */
+#article-container figure.highlight td {
+    padding: 8px 10px !important;
+    border: none !important;
+}
+#article-container figure.highlight pre {
+    background: transparent !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
