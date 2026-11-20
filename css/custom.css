@@ -80,3 +80,35 @@
     margin: 0 !important;
     padding: 0 !important;
 }
+/* ==================== 黑夜模式专属适配 ==================== */
+
+/* 1. 黑夜模式下的版权框 & 标签背景 */
+html[data-theme="dark"] #tag_share .post-tags a,
+html[data-theme="dark"] #tag_share .post-share .social-share,
+html[data-theme="dark"] #tag_share .post-share .social-share .social-share-icon,
+html[data-theme="dark"] #article-container .post-copyright {
+    background: rgba(30, 30, 30, 0.65) !important; /* 换成深色半透明 */
+    border: 1px solid rgba(255, 255, 255, 0.1) !important; /* 边框变暗 */
+    color: #e0e0e0 !important; /* 文字变浅色 */
+}
+
+/* 2. 黑夜模式下标签文字和悬浮效果 */
+html[data-theme="dark"] #tag_share .post-tags a {
+    color: #c0c0c0 !important; 
+}
+html[data-theme="dark"] #tag_share .post-tags a:hover {
+    background: rgba(73, 177, 245, 0.3) !important; /* 悬浮时透出一点蓝色 */
+    color: #49b1f5 !important;
+}
+
+/* 3. 修复侧边栏 “Follow Me” 按钮在黑夜模式下变成纯黑的问题 */
+html[data-theme="dark"] #card-info-btn {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    color: #e0e0e0 !important;
+}
+
+/* 4. 侧边栏“目录”高亮颜色优化（截图里那个青色高亮在黑夜有点亮） */
+html[data-theme="dark"] #toc .toc-link.active {
+    background-color: rgba(73, 177, 245, 0.2) !important;
+    color: #49b1f5 !important;
+}
